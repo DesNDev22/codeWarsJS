@@ -92,4 +92,32 @@ function findUniq(arr) {
       console.log(findUniq([ 1, 1, 1, 2, 1, 1 ]), 2);
       console.log(findUniq([ 1, 1, 2, 1, 1 ]), 2);
       console.log(findUniq([ 3, 10, 3, 3, 3 ]), 10);
-  
+
+//
+
+const quarterOf = month => Math.trunc((month-1)/3)+1 // Math.ceil(m/3)
+
+    console.log(quarterOf(3), 1)
+    console.log(quarterOf(8), 3)
+    console.log(quarterOf(11), 4)
+
+  //
+
+  const isSquare = num => Number.isInteger(Math.sqrt(num))
+
+  console.log(isSquare(-1), false, "-1: Negative numbers cannot be square numbers");
+  console.log(isSquare( 0), true, "0 is a square number (0 * 0)");
+  console.log(isSquare( 3), false, "3 is not a square number");
+  console.log(isSquare( 4), true, "4 is a square number (2 * 2)");
+  console.log(isSquare(25), true, "25 is a square number (5 * 5)");
+  console.log(isSquare(26), false, "26 is not a square number");
+
+//
+
+const betterThanAverage = (classPoints, yourPoints) => ((classPoints.reduce((acc, curr) => acc + curr,0) + yourPoints) / (classPoints.length + 1)) < yourPoints
+
+    console.log(betterThanAverage([2, 3], 5), true);
+    console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75), true);
+    console.log(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9), false);
+    console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50), false);
+    console.log(betterThanAverage([29, 55, 74, 60, 11, 90, 67, 28], 21), false);
