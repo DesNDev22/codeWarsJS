@@ -121,3 +121,60 @@ const betterThanAverage = (classPoints, yourPoints) => ((classPoints.reduce((acc
     console.log(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9), false);
     console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50), false);
     console.log(betterThanAverage([29, 55, 74, 60, 11, 90, 67, 28], 21), false);
+
+//
+
+const makeUpperCase = str => str.toUpperCase()
+
+    console.log(makeUpperCase(""),           "");
+    console.log(makeUpperCase("hello"), "HELLO");
+    console.log(makeUpperCase("Hello"), "HELLO");
+    console.log(makeUpperCase("HELLO"), "HELLO");
+
+//
+
+const repeatStr = (n, s) => s.repeat(n);
+
+    console.log(repeatStr(3, "*"), "***");
+    console.log(repeatStr(5, "#"), "#####");
+    console.log(repeatStr(2, "ha "), "ha ha ");
+
+//
+
+function abbrevName(name){
+  let nameArr = name.split(' ')
+  let aName = ''
+  for (let i = 0; i < nameArr.length; i++) {
+    aName !== '' ? aName += '.' : ''
+    aName += nameArr[i][0].toUpperCase()
+	}
+  return aName
+}
+
+    console.log(abbrevName("Sam Harris"), "S.H");
+    console.log(abbrevName("Patrick Feenan"), "P.F");
+    console.log(abbrevName("Evan Cole"), "E.C");
+    console.log(abbrevName("P Favuzzi"), "P.F");
+    console.log(abbrevName("David Mendieta"), "D.M");
+
+//
+
+function twoSum(numbers, target) {
+  // ...
+  let solutionArr = []
+  numbers.forEach((num, ind, origArr) => {
+    origArr.forEach((item, index) => {
+      if (ind !== index) {
+        if ((num + item) - target === 0) {
+          solutionArr.length === 0 ? solutionArr.push(ind, index) : 0
+        }
+      }
+    })
+  })
+  return solutionArr
+}
+  
+    console.log(twoSum([1,2,3],4), '[0,2]')
+    console.log(twoSum([1234,5678,9012], 14690), '[1,2]')
+    console.log(twoSum([2,2,3],4), '[0,1]')
+    console.log(twoSum([2,3,1],4), '[1,2]')
