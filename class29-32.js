@@ -178,3 +178,102 @@ function twoSum(numbers, target) {
     console.log(twoSum([1234,5678,9012], 14690), '[1,2]')
     console.log(twoSum([2,2,3],4), '[0,1]')
     console.log(twoSum([2,3,1],4), '[1,2]')
+
+//
+
+const checkForFactor = (base, factor) => base % factor === 0
+
+console.log(checkForFactor(10,2), true)
+console.log(checkForFactor(63,7), true)
+console.log(checkForFactor(2450,5), true)
+console.log(checkForFactor(24612,3), true)
+console.log(checkForFactor(9,2), false)
+console.log(checkForFactor(653,7), false)
+console.log(checkForFactor(2453,5), false)
+console.log(checkForFactor(24617,3), false)
+
+//
+
+function cockroachSpeed(s) { 
+  //Good Luck!
+  const centimetersInKilometers = 100000;
+  const secondsInHour = 3600;
+  return Math.floor(s * centimetersInKilometers / secondsInHour)
+}
+
+console.log(cockroachSpeed(1.08), 30);
+console.log(cockroachSpeed(1.09), 30);
+console.log(cockroachSpeed(0), 0);
+
+//
+
+function switchItUp(number){
+  //Write your own Code!
+    const arrNumInWords = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine']
+    return arrNumInWords[number]
+  }
+
+console.log(switchItUp(1),"One");
+console.log(switchItUp(3),"Three");
+console.log(switchItUp(5),"Five");
+
+//
+
+const squareSum = numbers => numbers.reduce((a,c) => a + (c**2), 0)
+
+console.log(squareSum([1,2]), 5);
+console.log(squareSum([0, 3, 4, 5]), 50);
+console.log(squareSum([]), 0);
+
+//
+
+function highAndLow(numbers){
+  // ...
+  const arrNum = numbers.split(" ").sort((a,b) => b-a)
+  let strReturn = ''
+	arrNum.length > 1 ? strReturn = `${arrNum.shift().toString()} ${arrNum.pop().toString()}` : strReturn = `${numbers} ${numbers}`
+  
+  return strReturn
+}
+
+assert.strictEqual(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
+assert.strictEqual(highAndLow("1 2 3"), "3 1");
+
+//
+
+function sumTwoSmallestNumbers(numbers) {  
+  //Code here
+  numbers.sort((a, b) => a - b)
+  return numbers[0] + numbers[1]
+}
+
+console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13 , "Sum should be 13");
+console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6 , "Sum should be 6");
+console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10 , "Sum should be 10");
+console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24 , "Sum should be 24");
+console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16 , "Sum should be 16");
+
+//
+
+function findNeedle(haystack) {
+  // your code here
+  const position = haystack.indexOf('needle')
+  return `found the needle at position ${position}`
+}
+
+var haystack_1 = ['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false];
+var haystack_2 = ['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago'];
+var haystack_3 = [1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,'needle',1,2,3,4,5,5,6,5,4,32,3,45,54];
+
+console.log(findNeedle(haystack_1), 'found the needle at position 3')
+console.log(findNeedle(haystack_2), 'found the needle at position 5') 
+console.log(findNeedle(haystack_3), 'found the needle at position 30')
+
+//
+
+const removeEveryOther = arr => arr.filter((element, index) => index % 2 === 0)
+
+console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']),['Hello', 'Hello Again']);
+console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),[1, 3, 5, 7, 9]);
+console.log(removeEveryOther([[1, 2]]), [[1, 2]]);
+console.log(removeEveryOther([['Goodbye'], {'Great': 'Job'}]),[['Goodbye']]);
