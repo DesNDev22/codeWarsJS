@@ -34,3 +34,27 @@ console.log(evenOrOdd(7), "Odd");
 console.log(evenOrOdd(-42), "Even");
 console.log(evenOrOdd(-7), "Odd");
 console.log(evenOrOdd(0), "Even");
+
+//
+
+function removeExclamationMarks(s) {
+  return s.split('!').join('');
+}
+
+console.log(removeExclamationMarks("Hello World!"), "Hello World");
+
+//
+
+function domainName(url){
+  let strippedUrl
+  strippedUrl = url.replace(/http:\/\//gi, '')
+  strippedUrl = strippedUrl.replace(/https:\/\//gi, '')
+  strippedUrl = strippedUrl.replace(/www\./gi, '')
+  return strippedUrl.substring(0, strippedUrl.indexOf('.'))
+}
+
+console.log(domainName("http://google.com"), "google");
+console.log(domainName("http://google.co.jp"), "google");
+console.log(domainName("www.xakep.ru"), "xakep");
+console.log(domainName("https://youtube.com"), "youtube");
+console.log(domainName("https://www.soddfhsud9849340kbjwwwiu8998.com"), "youtube");
