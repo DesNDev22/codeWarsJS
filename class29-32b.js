@@ -122,3 +122,40 @@ console.log(validatePIN("12 4"),false, "Wrong output for '12 4'");
 //const validatePIN = pin => /^\d{4}$|^\d{6}$/.test(pin)
 
 //
+
+class Kata {
+  static getVolumeOfCuboid(length, width, height) {
+    // your code here
+    return length * width * height
+  }
+}
+
+console.log(Kata.getVolumeOfCuboid(1,2,2),  4);
+console.log(Kata.getVolumeOfCuboid(6,2,5), 60);
+
+
+//
+
+const areaOrPerimeter = (l , w) => l === w ? l * w : (l * 2) + (w * 2)
+
+console.log(areaOrPerimeter(3,  3),  9);
+console.log(areaOrPerimeter(6, 10), 32);
+
+//
+
+function isPangram(string){
+  //...
+  return (new Set(string.toLowerCase().split('').filter(ele => ele.match(/[a-z]/))).size === 26 ? true : false)
+}
+
+console.log(isPangram("The quick brown fox jumps over the lazy dog."), true)
+console.log(isPangram("This is not a pangram."), false)
+
+//
+
+const friend = friends => friends.filter(name => name.length === 4)
+
+console.log(friend(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"])
+console.log(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"]), ["Ryan"])
+console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]), ["Jimm", "Cari", "aret"])
+console.log(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"])
