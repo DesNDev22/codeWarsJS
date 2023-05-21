@@ -159,3 +159,37 @@ console.log(friend(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"])
 console.log(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"]), ["Ryan"])
 console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]), ["Jimm", "Cari", "aret"])
 console.log(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"])
+
+
+//
+
+function hoopCount (n) {
+  return n < 10 ? 'Keep at it until you get it' : 'Great, now move on to tricks'   
+}
+
+console.log(hoopCount(3),"Keep at it until you get it" ) 
+console.log(hoopCount(11),"Great, now move on to tricks" )
+
+//
+
+function expandedForm(num) {
+  // Your code here
+  return (num.toString().split('').map((ele, index, arr) => ele = ele + '0'.repeat(arr.length - (index + 1))).filter(a => Number(a) != 0).join(' + '))
+  
+}
+
+console.log(expandedForm(12), '10 + 2');
+console.log(expandedForm(42), '40 + 2');
+console.log(expandedForm(70304), '70000 + 300 + 4');
+console.log(expandedForm(70004), '70000 + 4');
+
+//
+
+function solution(str){
+  return str.split('').reverse().join('')
+}
+
+console.log(solution('world'), 'dlrow');
+console.log(solution('hello'), 'olleh');
+console.log(solution(''), '');
+console.log(solution('h'), 'h');
