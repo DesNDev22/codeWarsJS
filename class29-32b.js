@@ -208,3 +208,10 @@ console.log(descendingOrder(15), 51)
 console.log(descendingOrder(1021), 2110)
 console.log(descendingOrder(123456789), 987654321)
 
+//
+
+const goals = (laLigaGoals, copaDelReyGoals, championsLeagueGoals) => laLigaGoals + copaDelReyGoals + championsLeagueGoals
+
+console.log(goals(0,0,0), 0)
+console.log(goals(43, 10, 5), 58)
+
