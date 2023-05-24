@@ -215,3 +215,44 @@ const goals = (laLigaGoals, copaDelReyGoals, championsLeagueGoals) => laLigaGoal
 console.log(goals(0,0,0), 0)
 console.log(goals(43, 10, 5), 58)
 
+//
+
+function basicOp(operation, value1, value2) {
+  switch(operation) {
+    case '+':
+    	return value1 + value2
+    	break;
+    case '-':
+    	return value1 - value2
+    	break;
+    case '*':
+    	return value1 * value2
+    	break;
+    case '/':
+    	return value1 / value2
+    	break;
+    default:
+    	return 0
+  }
+}
+
+console.log(basicOp('+', 4, 7), 11);
+console.log(basicOp('-', 15, 18), -3);
+console.log(basicOp('*', 5, 5), 25);
+console.log(basicOp('/', 49, 7), 7);
+
+//
+
+const square = n => n**2 // Write the "square"-function here
+
+console.log(square(3), 9);
+
+//
+
+const stringToNumber = str => parseInt(str);
+  
+console.log(stringToNumber("1234"),1234)
+console.log(stringToNumber("605"), 605)
+console.log(stringToNumber("1405"),1405)
+console.log(stringToNumber("-7"),  -7)
+  
