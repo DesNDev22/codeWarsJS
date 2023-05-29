@@ -161,3 +161,65 @@ function expressionMatter(a, b, c) {
   console.log(otherAngle(43, 78), 59);
   console.log(otherAngle(10, 20), 150);
   
+  //
+
+  var uniqueInOrder=function(iterable){
+    //your code here - remember iterable can be a string or an array
+    if (typeof(iterable) == 'object') { iterable = iterable.join('') }
+    let newArr = iterable.toString().split('').filter((item,index,arr) => item != arr[index-1])
+  
+    const isNotNumber = isNaN(parseInt(newArr.join('')))
+    return (isNotNumber ? newArr : newArr.map(a => parseInt(a)))
+  }
+  
+  console.log(uniqueInOrder('AAAABBBCCDAABBB'), ['A','B','C','D','A','B'])
+  console.log(uniqueInOrder(1222334444555), [1,2,3,4,5])
+  console.log(uniqueInOrder( [1,2,2,2,3,3,4,4,4,4,5,5,5]), [1,2,3,4,5])
+  console.log(uniqueInOrder(['AAAABBBC','CDAABBB']), ['A','B','C','D','A','B'])
+  
+  //
+
+  function makeNegative(num) {
+    return num > 0 ? num * -1 : num
+  }
+  
+  console.log(makeNegative(42), -42);
+  console.log(makeNegative(0), 0);
+  console.log(makeNegative(-5), -5);
+
+  //
+
+  function gooseFilter (birds) {
+    // return an array containing all of the strings in the input array except those that match strings in geese
+    let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    return birds.filter(a => !geese.includes(a))
+  }
+  
+  console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]),["Mallard", "Hook Bill", "Crested", "Blue Swedish"]);
+  console.log(gooseFilter(["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"]),["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"]);
+  console.log(gooseFilter(["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]),[]);
+  
+  //
+
+  function wave(str){
+    let returnedArr = []
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] != ' ') {
+        str[i] = str[i].toUpperCase()
+        returnedArr.push(str.substring(0,i) + str[i].toUpperCase() + str.substring(i+1))
+      }
+    }
+    return returnedArr
+  }
+  
+  let result = ["Hello", "hEllo", "heLlo", "helLo", "hellO"];
+  console.log(wave("hello"), result, "Should return: '"+result+"'");
+  result = ["Codewars", "cOdewars", "coDewars", "codEwars", "codeWars", "codewArs", "codewaRs", "codewarS"];
+  console.log(wave("codewars"), result, "Should return: '"+result+"'");
+  result = [];
+  console.log(wave(""), result, "Should return: '"+result+"'");
+  result = ["Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS"];
+  console.log(wave("two words"), result, "Should return: '"+result+"'");
+  result = [" Gap ", " gAp ", " gaP "];
+  console.log(wave(" gap "), result, "Should return: '"+result+"'");
+  
