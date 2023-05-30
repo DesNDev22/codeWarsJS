@@ -223,3 +223,68 @@ function expressionMatter(a, b, c) {
   result = [" Gap ", " gAp ", " gaP "];
   console.log(wave(" gap "), result, "Should return: '"+result+"'");
   
+  //
+
+  function getDivisorsCnt(n){
+    let highDiv = n
+    let count = 0
+    for (let i = 1; i < highDiv; i++) {
+      highDiv = n/i
+      if (n%i===0) {
+        highDiv != i ? count += 2 : count += 1
+      }
+    }
+    return count
+  }
+  
+  console.log(getDivisorsCnt(1),  1);
+  console.log(getDivisorsCnt(10), 4);
+  console.log(getDivisorsCnt(11), 2);
+  console.log(getDivisorsCnt(54), 8);
+  
+  //
+
+  function findOdd(A) {
+    //happy coding!
+    let newArr = A.sort((a,b) => a - b)
+    let countTimes = 0
+    let numCounted = newArr[0]
+    for (let i = 0; i < A.length; i++) {
+      if (numCounted !== newArr[i]) {
+        countTimes % 2 !== 0 ? i = A.length : numCounted = newArr[i]
+      }
+      countTimes++
+    }
+    return numCounted; 
+  }
+    
+  function doTest(a, n) {
+    console.log(findOdd(a), n, `Incorrect answer for input=[${a}]`);
+  }
+    
+  doTest([7], 7);
+  doTest([0], 0);
+  doTest([1,1,2], 2);
+  doTest([0,1,0,1,0], 0);
+  doTest([1,2,2,3,3,3,4,3,3,3,2,2,1], 4);
+  doTest([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5], 5);
+  doTest([1,1,2,-2,5,2,4,4,-1,-2,5], -1);
+  doTest([20,1,1,2,2,3,3,5,5,4,20,4,5], 5);
+  doTest([10], 10);
+  doTest([1,1,1,1,1,1,10,1,1,1,1], 10);
+  doTest([5,4,3,2,1,5,4,3,2,10,10], 1);
+  
+  //
+
+  String.prototype.isUpperCase = function() {
+    return this.toUpperCase() == this
+  }
+  
+  console.log('c'.isUpperCase(), false, 'c is not upper case');
+  console.log('C'.isUpperCase(), true, 'C is upper case');
+  console.log('hello I AM DONALD'.isUpperCase(), false, 'hello I AM DONALD not is upper case');
+  console.log('HELLO I AM DONALD'.isUpperCase(), true, 'HELLO I AM DONALD is upper case');
+  console.log('ACSKLDFJSgSKLDFJSKLDFJ'.isUpperCase(), false, 'ACSKLDFJSgSKLDFJSKLDFJ not is upper case');
+  console.log('ACSKLDFJSGSKLDFJSKLDFJ'.isUpperCase(), true, 'ACSKLDFJSGSKLDFJSKLDFJ is upper case');
+  
+  
