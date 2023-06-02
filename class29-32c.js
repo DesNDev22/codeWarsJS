@@ -299,3 +299,51 @@ function expressionMatter(a, b, c) {
   console.log(findDifference([4, 4, 7], [3, 9, 3]), 31);
   console.log(findDifference([15, 20, 25], [10, 30, 25]), 0);
   
+  //
+
+  function duplicateEncode(word){
+    const sameCapitalization = word.toLowerCase()
+    let arrayEncoded = sameCapitalization.split('')
+    let nextOccurrence = 0
+    let charSymbol = ''
+    let charUsed = false
+    let processThisOne = true
+    for (let i = 0; i < sameCapitalization.length; i++) {
+      if (sameCapitalization[i] === ")" && charUsed) {
+        processThisOne = false } else { processThisOne = true }
+      if (sameCapitalization[i] === arrayEncoded[i] && processThisOne) {
+        nextOccurrence = findInstances(sameCapitalization, sameCapitalization[i], i+1)
+        nextOccurrence.length === 1 ? charSymbol = '(' : charSymbol = ')'
+        arrayEncoded[i] = charSymbol
+        //Found other occurrances of letter
+        for (let j = 0; j < nextOccurrence.length; j++) {
+          if (nextOccurrence[j] != -1) {
+            arrayEncoded[nextOccurrence[j]] = charSymbol
+            sameCapitalization[i] === ")" ? charUsed = true : 0
+          }
+        }
+      }
+    }
+    return arrayEncoded.join('')
+  }
+  
+  function findInstances(word, letter, index) {
+    let resultArray = []
+    let foundAtIndex = 0
+    index >= word.length ? resultArray.push(-1) : 0
+    while (foundAtIndex != -1 && index < word.length) {
+      foundAtIndex = word.indexOf(letter,index)
+      resultArray.push(foundAtIndex)
+      foundAtIndex != -1 ? index = foundAtIndex + 1 : index++
+    }
+    return resultArray
+  }
+  
+  console.log(duplicateEncode("din"),"(((");``
+  console.log(duplicateEncode("recede"),"()()()");
+  console.log(duplicateEncode("Success"),")())())","should ignore case");
+  console.log(duplicateEncode("(( @"),"))((");
+  console.log(duplicateEncode("n)T)))a)@)))v)w))!"),"()()))()()))()())(");
+  console.log(duplicateEncode("Success)"),")())())(","should ignore case");
+  
+  
