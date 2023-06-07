@@ -113,3 +113,20 @@ console.log(seven(times    (five ())), 35);
 console.log(four (plus     (nine ())), 13);
 console.log(eight(minus    (three())),  5);
 console.log(six  (dividedBy(two  ())),  3);
+
+// Turn array elements to object keys and counts occurrance of those keys in array
+
+function count(string) {
+  const object = string.split('').reduce((result, key) => {
+  result[key] = (result[key] || 0) + 1;
+  return result;
+}, {});
+  return object
+}
+
+console.log(count('carrera'), "{'c': 1, 'a': 2, 'r': 3, 'e': 1}");
+console.log(count(''), "{}");
+console.log(count('a'), "{'a': 1}");
+console.log(count('ab'), "{'a': 1, 'b': 1}");
+console.log(count('aba'), "{'a': 2, 'b': 1}");
+console.log(count('ABC'), "{'A': 1, 'B': 1, 'C': 1}");
