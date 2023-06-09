@@ -130,3 +130,27 @@ console.log(count('a'), "{'a': 1}");
 console.log(count('ab'), "{'a': 1, 'b': 1}");
 console.log(count('aba'), "{'a': 2, 'b': 1}");
 console.log(count('ABC'), "{'A': 1, 'B': 1, 'C': 1}");
+
+//Debugging sayHello function
+function sayHello(name) {
+  return `Hello, ${name}`
+}
+console.log(sayHello('Mr. Spock'), 'Hello, Mr. Spock')
+console.log(sayHello('Captain Kirk'), 'Hello, Captain Kirk')
+console.log(sayHello('Liutenant Uhura'), 'Hello, Liutenant Uhura')
+console.log(sayHello('Dr. McCoy'), 'Hello, Dr. McCoy')
+
+//Sort array by string length
+function sortByLength (array) {
+  return array.sort((a,b) => a.length - b.length)
+};
+console.log(sortByLength(["Beg", "Life", "I", "To"]),["I", "To", "Beg", "Life"]);
+console.log(sortByLength(["", "Moderately", "Brains", "Pizza"]),["", "Pizza", "Brains", "Moderately"]);
+console.log(sortByLength(["Longer", "Longest", "Short"]),["Short", "Longer", "Longest"]);
+
+//Convert number to reversed array of digits
+function digitize(n) {
+  return n.toString().split('').reverse().map(a => Number(a))
+}
+console.log(digitize(35231),[1,3,2,5,3]);
+console.log(digitize(0),[0]);
