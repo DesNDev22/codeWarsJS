@@ -64,13 +64,11 @@ console.log(high('d bb'), 'd');
 console.log(high('aaa b'), 'aaa');
 
 //Requirements:
-
 // There must be a function for each number from 0 ("zero") to 9 ("nine")
 // There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy
 // Each calculation consist of exactly one operation and two numbers
 // The most outer function represents the left operand, the most inner function represents the right operand
 // Division should be integer division. For example, this should return 2, not 2.666666...:
-
 const zero = value => typeof(value) != 'string' ? 0 : returnResult(`0 ${value}`)
 const one = value => typeof(value) != 'string' ? 1 : returnResult(`1 ${value}`)
 const two = value => typeof(value) != 'string' ? 2 : returnResult(`2 ${value}`)
@@ -115,7 +113,6 @@ console.log(eight(minus    (three())),  5);
 console.log(six  (dividedBy(two  ())),  3);
 
 // Turn array elements to object keys and counts occurrance of those keys in array
-
 function count(string) {
   const object = string.split('').reduce((result, key) => {
   result[key] = (result[key] || 0) + 1;
@@ -154,3 +151,38 @@ function digitize(n) {
 }
 console.log(digitize(35231),[1,3,2,5,3]);
 console.log(digitize(0),[0]);
+
+//Grasshopper - Summation
+function summation(num) {
+	let result = 0
+  for (let i = 1; i <= num; i++) {
+    result += i
+  }
+   return result
+}
+console.log(summation(1),  1);
+console.log(summation(2),  3);
+console.log(summation(8), 36);
+
+//7kyu Beginner Series #3 Sum of Numbers
+function getSum(a, b) {
+  
+  let minus = (a <= -1 && b <= -1)
+  let seriesOne = (Math.max(a,b) * (Math.abs(Math.max(a,b)) + 1)) / 2
+  let seriesTwo = (Math.min(a,b) * (Math.abs(Math.min(a,b)) + 1)) / 2
+  let resultSeries = seriesOne === seriesTwo ? a : 0
+
+  if ((a >= 1 && b >= 1) || (a <= -1 && b <= -1)) {
+    minus ? seriesOne = Math.max(a,b) - seriesOne : seriesTwo = Math.min(a,b) - seriesTwo
+  }
+
+  return resultSeries === 0 ? seriesOne + seriesTwo : resultSeries
+}
+console.log(getSum(0,-1), -1);
+console.log(getSum(0, 1),  1);
+console.log(getSum(2, 2),  2);
+console.log(getSum(-3, 5),  9);
+console.log(getSum(573, 573),  573);
+console.log(getSum(505, 4),  127759);
+console.log(getSum(-1, -5),  -15);
+console.log(getSum(-163, -296),  -30753);
