@@ -186,3 +186,25 @@ console.log(getSum(573, 573),  573);
 console.log(getSum(505, 4),  127759);
 console.log(getSum(-1, -5),  -15);
 console.log(getSum(-163, -296),  -30753);
+
+//8kyu Training JS #7: if..else and ternary operator
+function saleHotdogs(n){
+  return n < 5 ? n*100 : n >=5 && n < 10 ? n*95 : n*90
+}
+console.log(saleHotdogs(  1),  100);
+console.log(saleHotdogs(  4),  400);
+console.log(saleHotdogs(  5),  475);
+console.log(saleHotdogs(  9),  855);
+console.log(saleHotdogs( 10),  900);
+console.log(saleHotdogs(100), 9000);
+
+//8kyu What's the real floor?
+function getRealFloor(n) {
+  return n <= 0 ? n : n <= 12 ? n-1 : n-2
+}
+console.log(getRealFloor( 1),  0);
+console.log(getRealFloor( 5),  4);
+console.log(getRealFloor(15), 13);
+console.log(getRealFloor(-2), -2);
+
+//6kyu Simple Encryption #1 - Alternating Split
