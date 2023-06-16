@@ -207,4 +207,69 @@ console.log(getRealFloor( 5),  4);
 console.log(getRealFloor(15), 13);
 console.log(getRealFloor(-2), -2);
 
-//6kyu Simple Encryption #1 - Alternating Split
+//6kyu Simple Encryption #1 - Alternating Split odd indexed with even indexed
+function encrypt(text, n) {
+	let encrypted = text
+  if (n > 0 && typeof text == 'string') {
+    for (let i = 1; i <= n; i++) {
+      encrypted = encrypted.split('').filter((elem, index) => index%2!=0).concat(encrypted.split('').filter((elem, index) => index%2==0)).join('')
+    }
+  } else {
+    encrypted = text
+  }
+  return encrypted
+}
+
+function decrypt(encryptedText, n) {
+	let decrypted = encryptedText
+  let oddString = ''
+  let evenString = ''
+  if (n > 0 && typeof encryptedText == 'string') {
+    for (let i = 1; i <= n; i++) { 
+      oddString = decrypted.substring(Math.floor(encryptedText.length/2))
+      evenString = decrypted.substring(0,Math.floor(encryptedText.length/2))
+      decrypted = ''
+      for (let j = 0; j < Math.floor(encryptedText.length/2); j++) {
+        decrypted += oddString[j] + evenString[j]
+      }
+      evenString.length != oddString.length ? decrypted += oddString[evenString.length] : 0
+    }
+  } else {
+    decrypted = encryptedText
+  }
+  return decrypted
+}
+
+console.log(encrypt("This is a test!", 0), "This is a test!");
+console.log(encrypt("This is a test!", 1), "hsi  etTi sats!");
+console.log(encrypt("This is a test!", 2), "s eT ashi tist!");
+console.log(encrypt("This is a test!", 3), " Tah itse sits!");
+console.log(encrypt("This is a test!", 4), "This is a test!");
+console.log(encrypt("This is a test!", -1), "This is a test!");
+console.log(encrypt("This kata is very interesting!", 1), "hskt svr neetn!Ti aai eyitrsig");
+console.log(encrypt("Ths kata is very interesting!", 1), "h aai eyitrsigTskt svr neetn!"); 
+console.log('*********** DECODING ***************')
+console.log(decrypt("This is a test!", 0), "This is a test!");
+console.log(decrypt("hsi  etTi sats!", 1), "This is a test!");
+console.log(decrypt("s eT ashi tist!", 2), "This is a test!");
+console.log(decrypt(" Tah itse sits!", 3), "This is a test!");
+console.log(decrypt("This is a test!", 4), "This is a test!");
+console.log(decrypt("This is a test!", -1), "This is a test!");
+console.log(decrypt("hskt svr neetn!Ti aai eyitrsig", 1), "This kata is very interesting!");
+console.log(decrypt("h aai eyitrsigTskt svr neetn!", 1), "Ths kata is very interesting!");
+console.log(encrypt("", 0), "");
+console.log(decrypt("", 0), "");
+console.log(encrypt(null, 0), null);
+console.log(decrypt(null, 0), null);
+
+// COunt by X
+function countBy(x, n) {
+  let z = [];
+	for (let i = x; i <= x*n; i+=x) {
+    z.push(i)
+  }
+  return z;
+}
+
+console.log(countBy(1,10), [1,2,3,4,5,6,7,8,9,10], "Array does not match")
+console.log(countBy(2,5), [2,4,6,8,10], "Array does not match")
