@@ -262,7 +262,7 @@ console.log(decrypt("", 0), "");
 console.log(encrypt(null, 0), null);
 console.log(decrypt(null, 0), null);
 
-// COunt by X
+//8kyu Count by X
 function countBy(x, n) {
   let z = [];
 	for (let i = x; i <= x*n; i+=x) {
@@ -273,3 +273,41 @@ function countBy(x, n) {
 
 console.log(countBy(1,10), [1,2,3,4,5,6,7,8,9,10], "Array does not match")
 console.log(countBy(2,5), [2,4,6,8,10], "Array does not match")
+
+//8kyu Find the smallest integer in the array
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return Math.min(...args)
+  }
+}
+
+let sif = new SmallestIntegerFinder();
+console.log(sif.findSmallestInt([78,56,232,12,8]),8,'Should return the smallest int 8');
+console.log(sif.findSmallestInt([78,56,232,12,18]),12,'Should return the smallest int 12');
+console.log(sif.findSmallestInt([78,56,232,412,228]),56,'Should return the smallest int 56');
+console.log(sif.findSmallestInt([78,56,232,12,0]),0,'Should return the smallest int 0');
+console.log(sif.findSmallestInt([1,56,232,12,8]),1,'Should return the smallest int 1');
+
+//8kyu Lario and Muigi Pipe Problem
+function pipeFix(numbers){
+  let pipesFixed = []
+  for (let i = Math.min(...numbers); i <= Math.max(...numbers); i++) {
+    pipesFixed.push(i)
+  }
+	return pipesFixed
+}
+
+console.log(pipeFix([1,2,3,5,6,8,9]),[1,2,3,4,5,6,7,8,9]);
+console.log(pipeFix([1,2,3,12]),[1,2,3,4,5,6,7,8,9,10,11,12]);
+console.log(pipeFix([6,9]),[6,7,8,9]);
+console.log(pipeFix([-1,4]),[-1,0,1,2,3,4]);
+console.log(pipeFix([1,2,3]),[1,2,3]);
+console.log(pipeFix([3,12,1,2]),[1,2,3,4,5,6,7,8,9,10,11,12]);
+
+//8kyu Sum Mixed Array
+function sumMix(x){
+  return x.reduce((prev, curr) => prev += +curr, 0)
+}
+console.log(sumMix([9, 3, '7', '3']), 22);
+console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42); 
+console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']), 41); 
