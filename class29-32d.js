@@ -311,3 +311,32 @@ function sumMix(x){
 console.log(sumMix([9, 3, '7', '3']), 22);
 console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42); 
 console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']), 41); 
+
+//7kyu Sort Numbers
+function solution(nums){
+  return nums === null ? [] : nums.sort( (a,b) => a-b)
+}
+console.log(solution([1,2,3,10,5]), [1,2,3,5,10])
+console.log(solution(null), [])
+console.log(solution([]), [])
+console.log(solution([20, 2, 10]), [2,10,20])
+console.log(solution([2, 20, 10]), [2,10,20])
+
+//8kyu Vowel remover
+function shortcut (string) {
+  return string.split('').filter(item => item != 'a' & item != 'e' & item != 'i' & item != 'o' & item != 'u').join('')
+}
+console.log(shortcut('hello'), 'hll');
+console.log(shortcut('how are you today?'), 'hw r y tdy?');
+console.log(shortcut('complain'), 'cmpln');
+console.log(shortcut('never'), 'nvr');
+
+//8kyu Sum of positive
+function positiveSum(arr) {
+  return arr.reduce((sum,curr) => curr > 0 ? sum += curr : sum += 0,0)
+}
+console.log(positiveSum([1,2,3,4,5]),15);
+console.log(positiveSum([1,-2,3,4,5]),13);
+console.log(positiveSum([]),0);
+console.log(positiveSum([-1,-2,-3,-4,-5]),0);
+console.log(positiveSum([-1,2,3,4,-5]),9);
