@@ -340,3 +340,23 @@ console.log(positiveSum([1,-2,3,4,5]),13);
 console.log(positiveSum([]),0);
 console.log(positiveSum([-1,-2,-3,-4,-5]),0);
 console.log(positiveSum([-1,2,3,4,-5]),9);
+
+//8kyu Powers of 2
+function powersOfTwo(n){
+  let resultList = []
+	for (let i = 0; i <= n; i++) {
+    resultList.push(2**i)
+  }
+  return resultList
+}
+console.log(powersOfTwo(0), [1])
+console.log(powersOfTwo(1), [1, 2])
+console.log(powersOfTwo(4), [1, 2, 4, 8, 16])
+
+//7kyu Remove anchor from URL
+function removeUrlAnchor(url){
+  return url.indexOf('#') != -1 ? url.slice(0,url.indexOf('#')) : url
+}
+console.log(removeUrlAnchor('www.codewars.com#about'), 'www.codewars.com')
+console.log(removeUrlAnchor('www.codewars.com/katas/?page=1#about'), 'www.codewars.com/katas/?page=1')
+console.log(removeUrlAnchor('www.codewars.com/katas/'), 'www.codewars.com/katas/')
