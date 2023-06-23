@@ -360,3 +360,75 @@ function removeUrlAnchor(url){
 console.log(removeUrlAnchor('www.codewars.com#about'), 'www.codewars.com')
 console.log(removeUrlAnchor('www.codewars.com/katas/?page=1#about'), 'www.codewars.com/katas/?page=1')
 console.log(removeUrlAnchor('www.codewars.com/katas/'), 'www.codewars.com/katas/')
+
+//5kyu String incrementer
+function incrementString(strng) {
+  
+  let arrFromParam = strng.split('')
+  let itsNumber = true
+  let textStr = ''
+  let nbrStr = ''
+  let incrementedNumber = ''
+
+  // First let's get the number part of the string
+  for (let i = arrFromParam.length-1; i >= 0 && itsNumber; i--) {
+    !isNaN(arrFromParam[i]) ? nbrStr = arrFromParam[i] + nbrStr : itsNumber = false
+  }
+
+ 	// Get the text part of the string
+  textStr = arrFromParam.filter((character, index) => isNaN(character) || index < strng.length - nbrStr.length).join('')
+  
+  // Increment the counter and pad with zeroes if necessary
+  if (nbrStr !== '') {
+    incrementedNumber = (parseInt(nbrStr) + 1).toString()
+    incrementedNumber = '0'.repeat(nbrStr.length >= incrementedNumber.length ? nbrStr.length - incrementedNumber.length : 0) + incrementedNumber
+  } else {
+    incrementedNumber = '1'
+  }
+  
+  return textStr + incrementedNumber
+  
+}
+
+console.log(incrementString("foobar000"), "foobar001")
+console.log(incrementString("foobar999"), "foobar1000")
+console.log(incrementString("foobar00999"), "foobar01000")
+console.log(incrementString("foo"), "foo1")
+console.log(incrementString("foobar001"), "foobar002")
+console.log(incrementString("foobar1"), "foobar2")
+console.log(incrementString("1"), "2")
+console.log(incrementString("009"), "010")
+console.log(incrementString("fo99obar99"), "fo99obar100")
+
+//
+const number=function(array){
+  return array.map((item, index) => item = `${index + 1}: ${item}`)
+}
+
+console.log(number([]), [], 'Empty array should return empty array');
+console.log(number(["a", "b", "c"]), ["1: a", "2: b", "3: c"], 'Return the correct line numbers');                
+
+//8kyu Super Duper Easy
+function problem(x){
+  return isNaN(x) || x.length === 0 ? "Error" : (x * 50) + 6
+}
+console.log(problem("hello"), "Error");
+console.log(problem(1), 56);
+console.log(problem(5), 256);
+console.log(problem(0), 6);
+console.log(problem(1.2), 66);
+console.log(problem(3), 156);
+console.log(problem("RyanIsCool"), "Error");
+console.log(problem(-3), -144);
+console.log(problem(""), "Error");
+console.log(problem(0.03), 7.5);
+
+//
+function order(words){
+
+  return words.split(' ').sort((a,b) => parseInt(a.replace(/[a-z]/gi,'')) - parseInt(b.replace(/[a-z]/gi,''))).join(' ')
+
+}
+console.log(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est")
+console.log(order("4of Fo1r pe6ople g3ood th5e the2"), "Fo1r the2 g3ood 4of th5e pe6ople")
+console.log(order(""), "", "empty input should return empty string" )
