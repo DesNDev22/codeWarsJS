@@ -1,0 +1,46 @@
+//8kyu Find Multiples of a Number
+function findMultiples(integer, limit) {
+  let resultSet = []
+  for (let i = 1; i <= limit/integer; i++) {
+    resultSet.push(integer * i)
+  }
+  return resultSet
+}
+console.log(findMultiples(5, 25), [5, 10, 15, 20, 25])
+console.log(findMultiples(1, 2), [1, 2])
+console.log(findMultiples(5, 7), [5])
+console.log(findMultiples(4, 27), [4, 8, 12, 16, 20, 24])
+console.log(findMultiples(11, 54), [11, 22, 33, 44])
+
+//7kyu Jaden Casing Strings
+String.prototype.toJadenCase = function () {
+  return this.split(' ').map(element => `${element[0].toUpperCase()}${element.slice(1)}`).join(' ')
+};
+let str = "How can mirrors be real if our eyes aren't real";
+console.log(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real");
+
+//7kyu Find the capitals
+var capitals = function (word) {
+    const uppercaseWord = word.toUpperCase()
+    const listArray = []
+    for (let i = 0; i <= word.length-1; i++) {
+        word[i] === uppercaseWord[i] ? listArray.push(i) : 0
+    }
+    return listArray
+};
+
+console.log(capitals('CodEWaRs'), [0,3,4,6] );
+
+//7kyu The highest profit wins!
+function minMax(arr){
+    const resArr = [0,0]
+    arr.sort((a,b) => a-b)
+    resArr[0] = arr[0]
+    resArr[1] = arr[arr.length-1]
+    return resArr
+    //return [Math.min(...arr), Math.max(...arr)]
+}
+
+console.log(minMax([1, 2, 3, 4, 5]), [1, 5]);
+console.log(minMax([2334454, 5]), [5, 2334454]);
+console.log(minMax([5]), [5, 5]);
