@@ -82,3 +82,22 @@ console.log(getFirst([1,2,3]),1);
 console.log(getLast([1,2,3]),3);
 console.log(pushElement([1,2,3]).length,4);
 console.log(popElement([1,2,3]).length,2);
+
+//8kyu Grasshopper - Personalized Message
+function greet (name, owner) {
+  return name === owner ? 'Hello boss' : 'Hello guest'
+}
+
+console.log(greet('Daniel', 'Daniel'), 'Hello boss')
+console.log(greet('Greg', 'Daniel'), 'Hello guest')
+
+//8kyu Is it even?
+function testEven(n) {
+  return n % 2 === 0
+}
+
+console.log(testEven(0), true, "testEven for 0");
+console.log(testEven(0.5), false, "testEven for 0.5");
+console.log(testEven(1), false, "testEven for 1");
+console.log(testEven(2), true, "testEven for 2");
+console.log(testEven(-4), true, "testEven for 2");
