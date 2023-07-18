@@ -101,3 +101,35 @@ console.log(testEven(0.5), false, "testEven for 0.5");
 console.log(testEven(1), false, "testEven for 1");
 console.log(testEven(2), true, "testEven for 2");
 console.log(testEven(-4), true, "testEven for 2");
+
+//8kyu 5 without numbers
+function unusualFive() {
+  return 'fives'.length
+}
+
+console.log(unusualFive(), 5);
+
+//6kyu Give me a Diamond
+function diamond(n){
+  let diamondStr = null
+  let diamondArr = []
+  let spaces = 0
+  const centerDiamond = Math.ceil(n/2)
+
+  if (n % 2 > 0) {
+  
+    diamondArr.push("*".repeat(n))
+    for (let i = Math.floor(n/2); i >= 1; i--) {
+      spaces = centerDiamond - i
+      diamondArr.push(' '.repeat(spaces) + '*'.repeat(n-(spaces * 2)))
+      diamondArr.unshift(' '.repeat(spaces) + '*'.repeat(n-(spaces * 2)))
+    }
+    diamondStr = diamondArr.join("\n") + "\n"
+  }
+
+  return diamondStr;
+}
+
+console.log(diamond(1), "*\n")
+console.log(diamond(3), " *\n***\n *\n")
+console.log(diamond(5), "  *\n ***\n*****\n ***\n  *\n")
