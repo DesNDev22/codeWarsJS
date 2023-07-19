@@ -133,3 +133,29 @@ function diamond(n){
 console.log(diamond(1), "*\n")
 console.log(diamond(3), " *\n***\n *\n")
 console.log(diamond(5), "  *\n ***\n*****\n ***\n  *\n")
+
+//6kyu Persistent Bugger.
+function persistence(num) {
+  let persistenceNum = 0
+  let numToString = ''
+  let newMultPers = 1
+  
+  //Only if is a number and the number is positive
+  if (typeof(num) == "number" && num >= 0) {
+    numToString = num.toString()
+    while (numToString.length > 1) {
+      for (let i = 0; i < numToString.length; i++) {
+        newMultPers = newMultPers * numToString[i]
+      }
+      persistenceNum += 1
+      numToString = newMultPers.toString()
+      newMultPers = 1
+    }
+  }
+  return persistenceNum
+}
+
+console.log(persistence(39),3);
+console.log(persistence(4),0);
+console.log(persistence(25),2);
+console.log(persistence(999),4);
