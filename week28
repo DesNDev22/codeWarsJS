@@ -159,3 +159,22 @@ console.log(persistence(39),3);
 console.log(persistence(4),0);
 console.log(persistence(25),2);
 console.log(persistence(999),4);
+
+//6kyu Multiplication table
+multiplicationTable = function(size) {
+  const tableArray = []
+  let columnsArray = []
+  
+  //iterate rows
+  for (let i = 1; i <= size; i++) {
+    columnsArray = []
+    //iterate columns
+    for (j = 1; j <= size; j++) {
+      columnsArray.push(j * i)
+    }
+    tableArray.push(columnsArray)
+  }
+  return tableArray
+}
+
+console.log(multiplicationTable(3), [[1,2,3], [2,4,6], [3,6,9]]);
