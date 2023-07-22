@@ -196,3 +196,36 @@ console.log(multipleOfIndex([-56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,
 console.log(multipleOfIndex([28,38,-44,-99,-13,-54,77,-51]), [38, -44, -99])
 console.log(multipleOfIndex([-1,-49,-1,67,8,-60,39,35]), [-49, 8, -60, 35])
 console.log(multipleOfIndex([0, 2, 3, 6, 9]), [0, 2, 6])
+
+//8kyu A wolf in sheep's clothing
+function warnTheSheep(queue) {
+	const indexFound = queue.reverse().findIndex(el => el === "wolf")
+	return indexFound === 0 ? "Pls go away and stop eating my sheep" : `Oi! Sheep number ${indexFound}! You are about to be eaten by a wolf!`
+}
+
+console.log(warnTheSheep(["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"],
+"Oi! Sheep number 2! You are about to be eaten by a wolf!"
+))
+console.log(warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"],
+"Oi! Sheep number 5! You are about to be eaten by a wolf!"
+))
+console.log(warnTheSheep(["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"],
+"Oi! Sheep number 6! You are about to be eaten by a wolf!"
+))
+console.log(warnTheSheep(["sheep", "wolf", "sheep"],
+"Oi! Sheep number 1! You are about to be eaten by a wolf!"
+))
+console.log(warnTheSheep(["wolf"],
+"Pls go away and stop eating my sheep"
+))
+console.log(warnTheSheep(["sheep", "sheep", "wolf"],
+"Pls go away and stop eating my sheep"))
+
+//8kyu How many lightsabers do you own?
+function howManyLightsabersDoYouOwn(name = 'Prius') {
+  return name === 'Zach' ? 18 : 0
+}
+
+console.log( howManyLightsabersDoYouOwn(), 0 )
+console.log( howManyLightsabersDoYouOwn("Adam"), 0 )
+console.log( howManyLightsabersDoYouOwn("Zach"), 18 )
