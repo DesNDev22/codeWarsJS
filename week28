@@ -232,7 +232,20 @@ console.log( howManyLightsabersDoYouOwn("Zach"), 18 )
 
 //5kyu Rot13
 function rot13(message){
-  //your code here
+  let result = "";
+  for (let i = 0; i < message.length; i++) {
+    const char = message[i];
+    if (/[A-Za-z]/.test(char)) {
+      // Determine the base offset based on the character case
+      const baseOffset = char >= 'A' && char <= 'Z' ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0);
+      // Calculate the ROT13 value and wrap around the alphabet
+      const rotatedChar = String.fromCharCode((char.charCodeAt(0) - baseOffset + 13) % 26 + baseOffset);
+      result += rotatedChar;
+    } else {
+      result += char; // Non-alphabetic characters are appended as they are
+    }
+  }
+  return result;
 }
 
 console.log(rot13("test"), "grfg", `Test failed with messsage = '${"test"}'`);
