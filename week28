@@ -229,3 +229,11 @@ function howManyLightsabersDoYouOwn(name = 'Prius') {
 console.log( howManyLightsabersDoYouOwn(), 0 )
 console.log( howManyLightsabersDoYouOwn("Adam"), 0 )
 console.log( howManyLightsabersDoYouOwn("Zach"), 18 )
+
+//5kyu Rot13
+function rot13(message){
+  //your code here
+}
+
+console.log(rot13("test"), "grfg", `Test failed with messsage = '${"test"}'`);
+console.log(rot13("Test"), "Grfg", `Test failed with messsage = '${"Test"}'`);
