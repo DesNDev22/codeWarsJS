@@ -250,3 +250,12 @@ function rot13(message){
 
 console.log(rot13("test"), "grfg", `Test failed with messsage = '${"test"}'`);
 console.log(rot13("Test"), "Grfg", `Test failed with messsage = '${"Test"}'`);
+
+//8kyu Enumerable Magic - Does My List Include This?
+function include(arr, item){
+  return arr.includes(item)
+}
+
+console.log(include([1,2,3,4], 3), true )
+console.log(include([1,2,4,5], 3), false)
+console.log(include([], 3),        false)
