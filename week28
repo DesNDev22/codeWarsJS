@@ -259,3 +259,19 @@ function include(arr, item){
 console.log(include([1,2,3,4], 3), true )
 console.log(include([1,2,4,5], 3), false)
 console.log(include([], 3),        false)
+
+//7kyu Binary Addition
+function addBinary(a,b) {
+	const binaryChain = []
+  let newValue = a + b
+  
+  while (newValue !== 0) {
+    binaryChain.push(newValue % 2)
+    newValue = Math.floor(newValue/2)
+  }
+
+  return binaryChain.reverse().join('')
+}
+
+console.log(addBinary(1, 1), '10')
+console.log(addBinary(5, 9), '1110')
