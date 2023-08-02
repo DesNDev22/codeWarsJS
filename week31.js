@@ -23,3 +23,44 @@ console.log(minValue([5, 6, 9, 9, 7, 6, 4]), 45679);
 console.log(minValue([1, 9, 1, 3, 7, 4, 6, 6, 7]), 134679);
 console.log(minValue([3, 6, 5, 5, 9, 8, 7, 6, 3, 5, 9]), 356789);
 console.log(minValue([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), 1);
+
+//7kyu The Coupon Code
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+    return enteredCode === correctCode &&  Date.parse(currentDate) <= Date.parse(expirationDate)
+}
+
+console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'), true);
+console.log(checkCoupon('123a','123','September 5, 2014','October 1, 2014'), false);
+
+//6kyu Take a Ten Minutes Walk
+function isValidWalk(walk) {
+    if (walk.length != 10) {
+        return false
+    } else {
+        return walk.map(swapCardinalDirectionToValue).reduce((tot, curr) => tot + curr, 0) === 0
+    }
+}
+
+function swapCardinalDirectionToValue(direction) {
+    switch (direction) {
+        case "n":
+            return 1
+            break;
+        case "s":
+            return -1
+            break;
+        case "e":
+            return 5
+            break;
+        case "w":
+            return -5
+            break;
+        default:
+            return 100
+            break
+    }
+}
+console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']), 'should return true');
+console.log(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']), 'should return false');
+console.log(isValidWalk(['w']), 'should return false');
+console.log(isValidWalk(['n','n','n','s','n','s','n','s','n','s']), 'should return false');
