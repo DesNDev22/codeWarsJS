@@ -129,3 +129,28 @@ function binToDec(bin){
     return bin.split('').reverse().reduce((acc, val, ind) => acc + (val*(2**ind)),0)
 }
 
+//8kyu Student's Final Grade
+function finalGrade (exam, projects) {
+    return exam > 90 || projects > 10 ? 100 :
+              exam > 75 && projects >= 5 ? 90 :
+                  exam > 50 && projects >= 2 ? 75 : 0
+}
+
+console.log(finalGrade(100, 12), 100);
+console.log(finalGrade(85, 5), 90);
+
+//7kyu JavaScript Array Filter
+function getEvenNumbers(numbersArray){
+    return numbersArray.filter(item => item % 2 === 0)
+}
+
+console.log(getEvenNumbers([1,2,3,6,8,10]), [2,6,8,10])
+console.log(getEvenNumbers([1,2]), [2])
+console.log(getEvenNumbers([12,14,15]), [12,14])
+console.log(getEvenNumbers([13,15]), [])
+console.log(getEvenNumbers([1,3,9]), [])
+
+//8kyu Printing Array elements with Comma delimiters
+function printArray(array){
+    return array.join(',')
+}
