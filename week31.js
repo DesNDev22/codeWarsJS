@@ -85,3 +85,47 @@ console.log(getDrinkByProfession("poLiTiCian"), "Your tax dollars", "'Politician
 console.log(getDrinkByProfession("rapper"), "Cristal", "'Rapper' should map to 'Cristal'");
 console.log(getDrinkByProfession("pundit"), "Beer", "'Pundit' should map to 'Beer'");
 console.log(getDrinkByProfession("Pug"), "Beer", "'Pug' should map to 'Beer'");
+
+//7kyu Count the Digit
+function nbDig(n, d) {
+    const nToSquare = squareNumbers(n)
+    
+    return nToSquare.reduce((acc, val) => {
+      let foundDigitInStringValue = 0
+      let stringValue = val.toString()
+  
+      if (stringValue.includes(d)) {
+  
+        //found the decimal in squared number
+        for (let i = 0; i < stringValue.length; i++) {
+          //Checking how many times the number "d" appears in the chain
+          stringValue[i] != d ? 0 : foundDigitInStringValue++
+        }
+  
+      }
+  
+      return acc + foundDigitInStringValue
+  
+    }, 0)
+  }
+  
+  function squareNumbers(num) {
+    const arrayPowered = []
+  
+      for (let i = 0; i <= num; i++) {
+      arrayPowered.push(i**2)
+    }
+    
+    return arrayPowered
+  }
+
+console.log(nbDig( 5750, 0),  4700, "n = 5750, d = 0");
+console.log(nbDig(11011, 2),  9481, "n = 11011, d = 2");
+console.log(nbDig(12224, 8),  7733, "n = 12224, d = 8");
+console.log(nbDig(11549, 1), 11905, "n = 11549, d = 1");
+
+//8kyu Bin to Decimal
+function binToDec(bin){
+    return bin.split('').reverse().reduce((acc, val, ind) => acc + (val*(2**ind)),0)
+}
+
