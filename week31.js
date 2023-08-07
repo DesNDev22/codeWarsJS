@@ -154,3 +154,32 @@ console.log(getEvenNumbers([1,3,9]), [])
 function printArray(array){
     return array.join(',')
 }
+
+//8kyu Parse nice int from char problem
+function getAge(inputString){
+    return parseInt(inputString)
+}
+
+console.log(getAge("4 years old"), 4);
+
+//7kyu Number of People in the Bus
+//const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+const number = function(busStops){
+    return busStops.reduce((people, thisArray) => {
+      const [peopleIn, peopleOut] = thisArray
+      return people + (peopleIn - peopleOut)}, 0)
+}
+
+console.log(number([[10,0],[3,5],[5,8]]),5);
+console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]),17);
+console.log(number([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]),21);
+console.log(number([[0,0]]),0);
+
+//8kyu Training JS #5: Basic data types--Object
+function animal(obj){
+    return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`
+}
+  
+console.log(animal({name:"dog",legs:4,color:"white"}),"This white dog has 4 legs.");
+console.log(animal({name:"cock",legs:2,color:"red"}),"This red cock has 2 legs.");
+console.log(animal({name:"rabbit",legs:4,color:"gray"}),"This gray rabbit has 4 legs.");
