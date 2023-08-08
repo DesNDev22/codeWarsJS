@@ -183,3 +183,33 @@ function animal(obj){
 console.log(animal({name:"dog",legs:4,color:"white"}),"This white dog has 4 legs.");
 console.log(animal({name:"cock",legs:2,color:"red"}),"This red cock has 2 legs.");
 console.log(animal({name:"rabbit",legs:4,color:"gray"}),"This gray rabbit has 4 legs.");
+
+//8kyu Hex to Decimal
+function hexToDec(hexString) {
+    return parseInt(hexString, 16)
+}
+
+console.log(hexToDec("1"), 1);
+console.log(hexToDec("a"), 10);
+console.log(hexToDec("10"), 16);
+console.log(hexToDec("FF"), 255);
+console.log(hexToDec("-C"), -12);
+
+//7kyu Flatten and sort an array
+function flattenAndSort(array) {
+    return array.flat(Infinity).sort((a,b) => a - b)
+}
+
+console.log(flattenAndSort([]), []);
+console.log(flattenAndSort([[], []]), []);
+console.log(flattenAndSort([[], [1]]), [1]);
+console.log(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]]), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+console.log(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]), [1, 2, 3, 4, 5, 6, 100]);
+
+//8kyu Alan Partridge II - Apple Turnover
+function apple(x){
+    return x**2 > 1000 ? `It's hotter than the sun!!` : `Help yourself to a honeycomb Yorkie for the glovebox.`
+}
+
+console.log(apple('50'), 'It\'s hotter than the sun!!'); 
+console.log(apple(4), 'Help yourself to a honeycomb Yorkie for the glovebox.'); 
