@@ -213,3 +213,24 @@ function apple(x){
 
 console.log(apple('50'), 'It\'s hotter than the sun!!'); 
 console.log(apple(4), 'Help yourself to a honeycomb Yorkie for the glovebox.'); 
+
+//8kyu Reversed sequence
+const reverseSeq = n => {
+    let reverseSeqArray = []
+    if (n > 0) {
+        for (let i = n; i > 0; i--) {
+        reverseSeqArray.push(i)
+        }
+        return reverseSeqArray
+    }
+};
+
+console.log(reverseSeq(5), [5, 4, 3, 2, 1]);
+
+//8kyu Sum of differences in array
+function sumOfDifferences(arr) {
+    
+}
+
+console.log(sumOfDifferences([1, 2, 10]), 9);
+console.log(sumOfDifferences([-3, -2, -1]), 2);
