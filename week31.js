@@ -229,7 +229,14 @@ console.log(reverseSeq(5), [5, 4, 3, 2, 1]);
 
 //8kyu Sum of differences in array
 function sumOfDifferences(arr) {
+    let firstDifference = 0
+    let sumDifference = 0
     
+    if (arr.length > 0) {
+      sumDifference = arr.sort((a,b) => b-a).reduce()
+    }
+  
+    return sumDifference
 }
 
 console.log(sumOfDifferences([1, 2, 10]), 9);
