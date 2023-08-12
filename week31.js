@@ -233,11 +233,28 @@ function sumOfDifferences(arr) {
     let sumDifference = 0
     
     if (arr.length > 0) {
-      sumDifference = arr.sort((a,b) => b-a).reduce()
+      sumDifference = arr.sort((a,b) => b-a).reduce( (sum, value, ind, currArray) => ind > 0 ? sum + (currArray[ind-1] - value ) : sum, 0)
     }
-  
     return sumDifference
 }
 
 console.log(sumOfDifferences([1, 2, 10]), 9);
 console.log(sumOfDifferences([-3, -2, -1]), 2);
+
+//7kyu Sum of Minimums!
+function sumOfMinimums(arr) {
+    return arr.map(innerArray => Math.min(...innerArray)).reduce((acu, val) => acu + val, 0)
+}
+
+console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]), 9);
+console.log(sumOfMinimums([[11, 12, 14, 54], [67, 89, 90, 56], [7, 9, 4, 3], [9, 8, 6, 7]]), 76);
+
+//7kyu Largest pair sum in array
+function largestPairSum (numbers) {
+    return numbers.sort((a,b) => a - b).pop() + numbers.pop()
+}
+
+console.log(largestPairSum([10,14,2,23,19]), 42);
+console.log(largestPairSum([-100,-29,-24,-19,19]), 0);
+console.log(largestPairSum([1,2,3,4,6,-1,2]), 10);
+console.log(largestPairSum([-10, -8, -16, -18, -19]), -18);
