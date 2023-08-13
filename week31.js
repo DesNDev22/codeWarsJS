@@ -273,3 +273,32 @@ function between(a, b) {
 
 console.log(between(1, 4), [1, 2, 3, 4])
 console.log(between(-2, 2), [-2, -1, 0, 1, 2])
+
+//7kyu 
+function Fighter(name, health, damagePerAttack) {
+    this.name = name;
+    this.health = health;
+    this.damagePerAttack = damagePerAttack;
+    this.toString = function() { return this.name; }
+}
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+    let winner = ''
+    let fighter1Strike = 0
+    let fighter2Strike = 0
+
+    fighter1.toString() === firstAttacker ? fighter1Strike = 1 : fighter2Strike = 1
+
+  	console.log(Math.ceil(fighter1.health / fighter2.damagePerAttack) - fighter1Strike)
+  	console.log(Math.ceil(fighter2.health / fighter1.damagePerAttack) - fighter2Strike)
+    winner = (Math.ceil(fighter1.health / fighter2.damagePerAttack) - fighter1Strike) < (Math.ceil(fighter2.health / fighter1.damagePerAttack) - fighter2Strike) ? fighter1.toString() : fighter2.toString()
+
+  	return winner
+}
+
+console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"), "Lew")
+console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Harry"), "Harry")
+console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry"), "Harald")
+console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harald"), "Harald")
+console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Jerry"), "Harald")
+console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Harald"), "Harald")
