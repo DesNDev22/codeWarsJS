@@ -284,14 +284,13 @@ function Fighter(name, health, damagePerAttack) {
 
 function declareWinner(fighter1, fighter2, firstAttacker) {
     let winner = ''
-    let fighter1Strike = 0
-    let fighter2Strike = 0
+    let firstAttackerTimes = fighter2.health <= 0 ? 0 : fighter1.damagePerAttack <= 0 ? 99 :
+                             fighter2.health / fighter1.damagePerAttack
+    let secondAttackerTimes = fighter1.health <= 0 ? 0 : fighter2.damagePerAttack <= 0 ? 99 :
+                              fighter1.health / fighter2.damagePerAttack
 
-    fighter1.toString() === firstAttacker ? fighter1Strike = 1 : fighter2Strike = 1
-
-  	console.log(Math.ceil(fighter1.health / fighter2.damagePerAttack) - fighter1Strike)
-  	console.log(Math.ceil(fighter2.health / fighter1.damagePerAttack) - fighter2Strike)
-    winner = (Math.ceil(fighter1.health / fighter2.damagePerAttack) - fighter1Strike) < (Math.ceil(fighter2.health / fighter1.damagePerAttack) - fighter2Strike) ? fighter1.toString() : fighter2.toString()
+  	winner = firstAttackerTimes === secondAttackerTimes ? firstAttacker : 
+    				 firstAttackerTimes < secondAttackerTimes ? fighter1.toString() : fighter2.toString()
 
   	return winner
 }
