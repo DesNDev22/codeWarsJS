@@ -301,3 +301,24 @@ console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 
 console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harald"), "Harald")
 console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Jerry"), "Harald")
 console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Harald"), "Harald")
+
+//8kyu Is he gonna survive?
+function hero(bullets, dragons){
+    return bullets === 0 && dragons === 0 ? true : bullets / dragons >= 2
+}
+
+console.log(hero(10, 5), true);
+console.log(hero(7, 4), false);
+console.log(hero(4, 5), false);
+console.log(hero(100, 40), true);
+console.log(hero(1500, 751), false);
+console.log(hero(0, 1), false);
+
+//8kyu assert.strictEqual(peopleWithAgeDrink(22), 'drink whisky');
+function peopleWithAgeDrink(old) {
+    return old < 14 ? 'drink toddy' :
+    old < 18 ? 'drink coke' :
+    old < 21 ? 'adults drink beer' : 'drink whisky'
+};
+
+console.log(peopleWithAgeDrink(22), 'drink whisky');
