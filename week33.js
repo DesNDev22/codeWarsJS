@@ -70,3 +70,21 @@ console.log(remainder(17,5), 2, 'Returned value should be the value left over af
 console.log(remainder(13, 72), remainder(72, 13), 'The order the arguments are passed should not matter');
 console.log(remainder(1, 0), 'Divide by zero should return NaN');
 console.log(remainder(0, 0), 'Divide by zero should return NaN');
+
+//7kyu Round up to the next multiple of 5
+function roundToNext5(n){
+    // ...
+}
+
+console.log(roundToNext5(0),0)
+console.log(roundToNext5(1),5)
+console.log(roundToNext5(-1),0)
+console.log(roundToNext5(-5),-5)
+console.log(roundToNext5(3),5)
+console.log(roundToNext5(5),5)
+console.log(roundToNext5(7),10)
+console.log(roundToNext5(20),20)
+console.log(roundToNext5(39),40)
+console.log(roundToNext5(990),990)
+console.log(roundToNext5(121),125)
+console.log(roundToNext5(555),555)
