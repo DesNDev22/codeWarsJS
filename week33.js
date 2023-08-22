@@ -73,7 +73,7 @@ console.log(remainder(0, 0), 'Divide by zero should return NaN');
 
 //7kyu Round up to the next multiple of 5
 function roundToNext5(n){
-    // ...
+  return Math.ceil(n/5) * 5
 }
 
 console.log(roundToNext5(0),0)
@@ -88,3 +88,26 @@ console.log(roundToNext5(39),40)
 console.log(roundToNext5(990),990)
 console.log(roundToNext5(121),125)
 console.log(roundToNext5(555),555)
+
+//7kyu Money, Money, Money
+function calculateYears(principal, interestRate, taxRate, desired) {
+  let yearsOfInvestment = 0
+  let accruedInterest = 0
+  let taxOwed = 0
+  let newBalance = principal
+  
+  if (newBalance < desired) {
+  	  while (newBalance < desired) {
+       	accruedInterest = newBalance * interestRate //Interest for the year
+        taxOwed = accruedInterest * taxRate //Tax owed on accrued interest for the year
+        newBalance += accruedInterest - taxOwed
+        yearsOfInvestment++
+      }
+  }
+  
+  return yearsOfInvestment
+}
+
+console.log(calculateYears(1000, 0.05, 0.18, 1100), 3)
+console.log(calculateYears(1000,0.01625,0.18,1200), 14)
+console.log(calculateYears(1000,0.05,0.18,1000), 0)
