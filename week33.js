@@ -111,3 +111,14 @@ function calculateYears(principal, interestRate, taxRate, desired) {
 console.log(calculateYears(1000, 0.05, 0.18, 1100), 3)
 console.log(calculateYears(1000,0.01625,0.18,1200), 14)
 console.log(calculateYears(1000,0.05,0.18,1000), 0)
+
+//8kyu Correct the mistakes of the character recognition software
+function correct(string) {
+	// your code here
+}
+
+console.log(correct("L0ND0N"),"LONDON");
+console.log(correct("DUBL1N"),"DUBLIN");
+console.log(correct("51NGAP0RE"),"SINGAPORE");
+console.log(correct("BUDAPE5T"),"BUDAPEST");
+console.log(correct("PAR15"),"PARIS");
