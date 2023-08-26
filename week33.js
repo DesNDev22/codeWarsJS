@@ -114,7 +114,18 @@ console.log(calculateYears(1000,0.05,0.18,1000), 0)
 
 //8kyu Correct the mistakes of the character recognition software
 function correct(string) {
-	// your code here
+  return string.replace(/[510]/g, match => {
+    switch (match) {
+      case "5":
+        return "S";
+      case "1":
+        return "I";
+      case "0":
+        return "O";
+      default:
+        return match; // Return the matched character unchanged
+    }
+  });
 }
 
 console.log(correct("L0ND0N"),"LONDON");
