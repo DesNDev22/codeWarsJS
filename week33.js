@@ -171,3 +171,26 @@ saturday = [5448, 8041, 6573, 8104, 6208, 5912, 7927, 8909, 7000, 5059, 6412, 63
 let stairs = [sunday,monday,tuesday,wednesday,thursday,friday,saturday]
 
 console.log(stairsIn20(stairs), 54636040);
+
+//8kyu 
+function noBoringZeros(n) {
+  let sign = 0
+  n < 0 ? sign = -1 : sign = 1
+
+  return sign * parseInt(parseInt(n.toString().split('').reverse().join('')).toString().split('').reverse().join(''))
+}
+
+console.log(noBoringZeros(1450), 145)
+console.log(noBoringZeros(960000), 96)
+console.log(noBoringZeros(1050), 105)
+console.log(noBoringZeros(-1050), -105)
+console.log(noBoringZeros(-105), -105)
+console.log(noBoringZeros(0), 0)
+
+//8kyu No Loops 2 - You only need one
+function check(a,x){ return a.includes(x) };
+
+console.log(check([66, 101], 66), true);
+console.log(check([80, 117, 115, 104, 45, 85, 112, 115], 45), true);
+console.log(check(['t', 'e', 's', 't'], 'e'), true);
+console.log(check(['what', 'a', 'great', 'kata'], 'kat'), false);
