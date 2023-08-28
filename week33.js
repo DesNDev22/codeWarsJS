@@ -194,3 +194,63 @@ console.log(check([66, 101], 66), true);
 console.log(check([80, 117, 115, 104, 45, 85, 112, 115], 45), true);
 console.log(check(['t', 'e', 's', 't'], 'e'), true);
 console.log(check(['what', 'a', 'great', 'kata'], 'kat'), false);
+
+//7kyu Make a function that does arithmetic!
+function arithmetic(a, b, operator){
+  switch(operator) {
+    case "add":
+      return a + b
+      break; 
+    case "subtract":
+      return a - b
+      break; 
+    case "multiply":
+      return a * b
+      break; 
+    case "divide":
+      return a / b
+      break; 
+    default:
+              }
+}
+
+console.log(arithmetic(1, 2, "add"), 3, "'add' should return the two numbers added together!");
+console.log(arithmetic(8, 2, "subtract"), 6, "'subtract' should return a minus b!");
+console.log(arithmetic(5, 2, "multiply"), 10, "'multiply' should return a multiplied by b!");
+console.log(arithmetic(8, 2, "divide"), 4, "'divide' should return a divided by b!");
+
+//8kyu Return the day
+function whatday(num) { 
+  switch(num) {
+    case 1:
+      return 'Sunday'
+      break;
+    case 2:
+      return 'Monday'
+      break;
+    case 3:
+      return 'Tuesday'
+      break;
+    case 4:
+      return 'Wednesday'
+      break;
+    case 5:
+      return 'Thursday'
+      break;
+    case 6:
+      return 'Friday'
+      break;
+    case 7:
+      return 'Saturday'
+      break;
+    default:
+      return 'Wrong, please enter a number between 1 and 7'
+      break;
+  }
+}
+
+console.log(whatday(1),'Sunday')
+console.log(whatday(2), 'Monday')
+console.log(whatday(3),'Tuesday')
+console.log(whatday(8),  'Wrong, please enter a number between 1 and 7')
+console.log(whatday(20),  'Wrong, please enter a number between 1 and 7')
