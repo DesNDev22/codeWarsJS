@@ -254,3 +254,11 @@ console.log(whatday(2), 'Monday')
 console.log(whatday(3),'Tuesday')
 console.log(whatday(8),  'Wrong, please enter a number between 1 and 7')
 console.log(whatday(20),  'Wrong, please enter a number between 1 and 7')
+
+//6kyu Delete occurrences of an element if it occurs more than n times
+function deleteNth(arr,n){
+  // ...
+}
+
+console.log(deleteNth([20,37,20,21], 1), [20,37,21])
+console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3), [1, 1, 3, 3, 7, 2, 2, 2])
